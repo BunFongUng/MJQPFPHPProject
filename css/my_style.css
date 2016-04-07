@@ -1,0 +1,30 @@
+/* my style
+===========================*/
+.my_form-group {
+    margin-top: 8px;
+}
+
+.my_form-group-2 {
+    margin-top: 35px;
+    margin-bottom: 0;
+}
+.my_margin-right {
+    margin-right: 15px;
+}
+
+.my_margin-left {
+    margin-left: 193px;
+}
+.my_col-md {
+    padding-right: 0;
+}
+
+@media (max-width: 768px) {
+    .my_media_query {
+        display: none;
+    }
+}
+
+.my_padding-l-r {
+    padding: 0 10px;
+}
