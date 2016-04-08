@@ -110,11 +110,13 @@
         <entry file="file://$PROJECT_DIR$/admin/menu/update.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.4847397">
-              <caret line="10" column="46" selection-start-line="10" selection-start-column="46" selection-end-line="10" selection-end-column="46" />
+              <caret line="69" column="66" selection-start-line="69" selection-start-column="66" selection-end-line="69" selection-end-column="66" />
               <folding>
-                <marker date="1460083262629" expanded="true" signature="205:239" placeholder="SELECT * FRO..users..." />
-                <marker date="1460083262629" expanded="true" signature="797:831" placeholder="SELECT * FRO..menus..." />
-                <marker date="1460083262629" expanded="true" signature="2394:2434" placeholder="SELECT * FRO..menus..." />
+                <marker date="1460085403025" expanded="true" signature="205:239" placeholder="SELECT * FRO..users..." />
+                <marker date="1460085403025" expanded="true" signature="797:831" placeholder="SELECT * FRO..menus..." />
+                <marker date="1460085403025" expanded="true" signature="2394:2434" placeholder="SELECT * FRO..menus..." />
+                <marker date="1460085403025" expanded="true" signature="3206:3225" placeholder="SELECT * FRO..menus..." />
+                <marker date="1460085403025" expanded="true" signature="3960:3979" placeholder="SELECT * FRO..menus..." />
               </folding>
             </state>
           </provider>
@@ -337,7 +339,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12481089" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -789,11 +791,13 @@
     <entry file="file://$PROJECT_DIR$/admin/menu/update.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4847397">
-          <caret line="10" column="46" selection-start-line="10" selection-start-column="46" selection-end-line="10" selection-end-column="46" />
+          <caret line="69" column="66" selection-start-line="69" selection-start-column="66" selection-end-line="69" selection-end-column="66" />
           <folding>
-            <marker date="1460083262629" expanded="true" signature="205:239" placeholder="SELECT * FRO..users..." />
-            <marker date="1460083262629" expanded="true" signature="797:831" placeholder="SELECT * FRO..menus..." />
-            <marker date="1460083262629" expanded="true" signature="2394:2434" placeholder="SELECT * FRO..menus..." />
+            <marker date="1460085403025" expanded="true" signature="205:239" placeholder="SELECT * FRO..users..." />
+            <marker date="1460085403025" expanded="true" signature="797:831" placeholder="SELECT * FRO..menus..." />
+            <marker date="1460085403025" expanded="true" signature="2394:2434" placeholder="SELECT * FRO..menus..." />
+            <marker date="1460085403025" expanded="true" signature="3206:3225" placeholder="SELECT * FRO..menus..." />
+            <marker date="1460085403025" expanded="true" signature="3960:3979" placeholder="SELECT * FRO..menus..." />
           </folding>
         </state>
       </provider>

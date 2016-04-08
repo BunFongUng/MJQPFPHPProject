@@ -64,8 +64,24 @@
                                         ?>
                                         <?php if($stmt3->rowCount() > 0):?>
                                             <option value="<?= $row3['ID']?>"><?= $row3['MenuTitle']?></option>
+                                            <?php
+                                                $conn4 = $database->getConnection();
+                                                $stmt4 = $conn4->prepare("SELECT * FROM menus");
+                                                $stmt4->execute();
+                                            ?>
+                                            <?php while($row4 = $stmt4->fetch(PDO::FETCH_ASSOC)):?>
+                                                <option value="<?= $row4['ID']?>"><?= $row4['MenuTitle']?></option>
+                                            <?php endwhile;?>
                                         <?php else:?>
                                             <option value="0">None</option>
+                                            <?php
+                                                $conn4 = $database->getConnection();
+                                                $stmt4 = $conn4->prepare("SELECT * FROM menus");
+                                                $stmt4->execute();
+                                            ?>
+                                            <?php while($row4 = $stmt4->fetch(PDO::FETCH_ASSOC)):?>
+                                                <option value="<?= $row4['ID']?>"><?= $row4['MenuTitle']?></option>
+                                            <?php endwhile;?>
                                         <?php endif;?>
                                     </select>
                                 </div>
