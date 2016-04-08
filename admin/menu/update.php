@@ -9,6 +9,7 @@
         $stmt->bindParam(":id", $_SESSION['userSession']);
         $stmt->execute();
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        $stmt->closeCursor();
 
         //if user is not login then redirect the user to the login page
         if(!$user_home->is_logged_in()) {
@@ -25,6 +26,8 @@
             $stmt2 = $conn->prepare($sql_select);
             $stmt2->bindParam(":id", $id);
             $stmt2->execute();
+            $row2 = $stmt2->fetch(PDO::FETCH_ASSOC);
+            $stmt2->closeCursor();
         }
 
     } catch(PDOException $err) {
@@ -45,7 +48,7 @@
                             <form action="confirm_update.php" method="post">
                                 <div class="form-group">
                                     <label for="title">Menu Title</label>
-                                    <input type="text" class="form-control" name="title" id="title">
+                                    <input type="text" class="form-control" name="title" id="title" value="<?php echo $title = (isset($row2['MenuTitle'])) ? $row2['MenuTitle'] : ''?>">
                                 </div>
 
                                 <div class="form-group">
