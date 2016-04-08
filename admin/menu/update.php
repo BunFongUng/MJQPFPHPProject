@@ -65,7 +65,7 @@
                                         <?php if($stmt3->rowCount() > 0):?>
                                             <option value="<?= $row3['ID']?>"><?= $row3['MenuTitle']?></option>
                                         <?php else:?>
-                                            <option value=""></option>
+                                            <option value="0">None</option>
                                         <?php endif;?>
                                     </select>
                                 </div>
