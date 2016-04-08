@@ -54,7 +54,19 @@
                                 <div class="form-group">
                                     <label for="parent">Parent Menu</label>
                                     <select name="parent" id="parent" class="form-control">
-
+                                        <?php
+                                            $conn3 = $database->getConnection();
+                                            $sql_select2 = "SELECT * FROM menus WHERE id = :parentID";
+                                            $stmt3 = $conn3->prepare($sql_select2);
+                                            $stmt3->bindParam(":parentID", $row2['ParentMenu']);
+                                            $stmt3->execute();
+                                            $row3 = $stmt3->fetch(PDO::FETCH_ASSOC);
+                                        ?>
+                                        <?php if($stmt3->rowCount() > 0):?>
+                                            <option value="<?= $row3['ID']?>"><?= $row3['MenuTitle']?></option>
+                                        <?php else:?>
+                                            <option value=""></option>
+                                        <?php endif;?>
                                     </select>
                                 </div>
                             </form>

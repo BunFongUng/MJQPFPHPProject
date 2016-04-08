@@ -106,24 +106,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="update.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="update.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/admin/menu/update.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.0">
-              <caret line="44" column="52" selection-start-line="44" selection-start-column="52" selection-end-line="44" selection-end-column="52" />
+            <state vertical-scroll-proportion="0.70437956">
+              <caret line="67" column="59" selection-start-line="67" selection-start-column="59" selection-end-line="67" selection-end-column="59" />
               <folding>
-                <marker date="1460079439364" expanded="true" signature="205:239" placeholder="SELECT * FRO..users..." />
-                <marker date="1460079439364" expanded="true" signature="797:831" placeholder="SELECT * FRO..menus..." />
+                <marker date="1460083034920" expanded="true" signature="205:239" placeholder="SELECT * FRO..users..." />
+                <marker date="1460083034920" expanded="true" signature="797:831" placeholder="SELECT * FRO..menus..." />
+                <marker date="1460083034920" expanded="true" signature="2394:2434" placeholder="SELECT * FRO..menus..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dashboard.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="dashboard.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/dashboard.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.65328467">
-              <caret line="43" column="83" selection-start-line="43" selection-start-column="83" selection-end-line="43" selection-end-column="83" />
+            <state vertical-scroll-proportion="-17.923077">
+              <caret line="38" column="42" selection-start-line="38" selection-start-column="42" selection-end-line="38" selection-end-column="42" />
               <folding>
                 <marker date="1460079602301" expanded="true" signature="168:202" placeholder="SELECT * FRO..users..." />
                 <marker date="1460079602301" expanded="true" signature="418:437" placeholder="SELECT * FRO..menus..." />
@@ -176,8 +177,8 @@
         <option value="$PROJECT_DIR$/admin/menu/confirm_delete.php" />
         <option value="$PROJECT_DIR$/admin/menu/delete.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/admin/menu/update.php" />
         <option value="$PROJECT_DIR$/admin/dashboard.php" />
+        <option value="$PROJECT_DIR$/admin/menu/update.php" />
       </list>
     </option>
   </component>
@@ -773,24 +774,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/menu/update.php">
+    <entry file="file://$PROJECT_DIR$/admin/dashboard.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.0">
-          <caret line="44" column="52" selection-start-line="44" selection-start-column="52" selection-end-line="44" selection-end-column="52" />
+        <state vertical-scroll-proportion="-17.923077">
+          <caret line="38" column="42" selection-start-line="38" selection-start-column="42" selection-end-line="38" selection-end-column="42" />
           <folding>
-            <marker date="1460079439364" expanded="true" signature="205:239" placeholder="SELECT * FRO..users..." />
-            <marker date="1460079439364" expanded="true" signature="797:831" placeholder="SELECT * FRO..menus..." />
+            <marker date="1460079602301" expanded="true" signature="168:202" placeholder="SELECT * FRO..users..." />
+            <marker date="1460079602301" expanded="true" signature="418:437" placeholder="SELECT * FRO..menus..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/dashboard.php">
+    <entry file="file://$PROJECT_DIR$/admin/menu/update.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.65328467">
-          <caret line="43" column="83" selection-start-line="43" selection-start-column="83" selection-end-line="43" selection-end-column="83" />
+        <state vertical-scroll-proportion="0.70437956">
+          <caret line="67" column="59" selection-start-line="67" selection-start-column="59" selection-end-line="67" selection-end-column="59" />
           <folding>
-            <marker date="1460079602301" expanded="true" signature="168:202" placeholder="SELECT * FRO..users..." />
-            <marker date="1460079602301" expanded="true" signature="418:437" placeholder="SELECT * FRO..menus..." />
+            <marker date="1460083034920" expanded="true" signature="205:239" placeholder="SELECT * FRO..users..." />
+            <marker date="1460083034920" expanded="true" signature="797:831" placeholder="SELECT * FRO..menus..." />
+            <marker date="1460083034920" expanded="true" signature="2394:2434" placeholder="SELECT * FRO..menus..." />
           </folding>
         </state>
       </provider>
