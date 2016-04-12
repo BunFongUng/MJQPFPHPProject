@@ -46,6 +46,7 @@
                         </div>
                         <div class="panel-body">
                             <form action="confirm_update.php" method="post">
+                                <input type="hidden" name="update_id" value="<?php echo $update_id = (isset($row2['ID'])) ? $row2['ID'] : ''?>">
                                 <div class="form-group">
                                     <label for="title">Menu Title</label>
                                     <input type="text" class="form-control" name="title" id="title" value="<?php echo $title = (isset($row2['MenuTitle'])) ? $row2['MenuTitle'] : ''?>">

@@ -1,6 +1,14 @@
 <?php
 try {
+    session_start();
+    require_once("../config/User.php");
     require_once("../config/Database.php");
+
+    $user = new User();
+    if(!$user->is_logged_in()) {
+        $user->redirect('index.php');
+    }
+
     if(isset($_POST['delete'])) {
         $id = (isset($_POST['id'])) ? $_POST['id'] : '';
         if($id != "") {
