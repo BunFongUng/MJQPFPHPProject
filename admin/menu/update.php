@@ -85,6 +85,10 @@
                                         <?php endif;?>
                                     </select>
                                 </div>
+
+                                <div class="form-group">
+                                    <input type="submit" name="update" value="Update">
+                                </div>
                             </form>
                         </div>
                     </div>
