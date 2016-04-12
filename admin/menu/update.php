@@ -70,11 +70,12 @@
                                                 $stmt4->execute();
                                             ?>
                                             <?php while($row4 = $stmt4->fetch(PDO::FETCH_ASSOC)):?>
-                                                <?php if($row4['ID'] == $row3['ID']):?>
+                                                <?php if($row4['ID'] == $row3['ID'] && $row4['ID'] == $row2['ID']):?>
                                                     <?php continue;?>
                                                     <?php else:?>
                                                     <option value="<?= $row4['ID']?>"><?= $row4['MenuTitle']?></option>
                                                 <?php endif;?>
+
                                             <?php endwhile;?>
                                         <?php else:?>
                                             <option value="0">None</option>
