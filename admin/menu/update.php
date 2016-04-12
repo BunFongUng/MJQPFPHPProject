@@ -87,7 +87,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <input type="submit" name="update" value="Update">
+                                    <input class="btn btn-success form-control" type="submit" name="update" value="Update">
                                 </div>
                             </form>
                         </div>
