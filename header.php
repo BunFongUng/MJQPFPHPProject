@@ -11,7 +11,6 @@ try {
     while(list($menu_id, $menuTitle, $parent_id) = $stmt->fetch()) {
         $menus[$parent_id][$menu_id] = $menuTitle;
     }
-    print_r($menus);
     function listing_menus($main_menus) {
         global $menus;
         echo "<ul>";
