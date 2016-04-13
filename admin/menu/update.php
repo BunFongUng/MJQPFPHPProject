@@ -97,6 +97,10 @@
                                 </div>
 
                                 <div class="form-group">
+                                    <textarea name="content" id="content" value="<?= $content = (isset($row2['Content'])) ? $row2['Content'] : ''?>"></textarea>
+                                </div>
+
+                                <div class="form-group">
                                     <input class="btn btn-success form-control" type="submit" name="update" value="Update">
                                 </div>
                             </form>
