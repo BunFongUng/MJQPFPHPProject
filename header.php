@@ -8,10 +8,9 @@ try {
     $stmt->execute();
     $menus = array();
 
-    while(list($menu_id, $parentMenu, $menuTitle) = $stmt->fetch()) {
-        $menus[$parentMenu][$menu_id] = $menuTitle;
+    while(list($menu_id, $menuTitle, $parent_id) = $stmt->fetch()) {
+        $menus[$parent_id][$menu_id] = $menuTitle;
     }
-
     print_r($menus);
 //    function listing_menus($main_menus) {
 //        global $menus;
