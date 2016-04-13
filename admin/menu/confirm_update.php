@@ -30,12 +30,29 @@ try {
             $stmt->bindParam(":update_id", $update_id);
             $stmt->execute();
 
-            if($stmt->rowCount() > 0) {
-                echo "Record has been updated!";
-            }
         }
     }
 
 } catch(PDOException $err) {
     $error = $err->getMessage();
 }
+?>
+
+<?php include_once("header.php");?>
+    <div id="main-content">
+        <div class="wrapper">
+            <div class="row">
+                <div class="col-md-12">
+                    <?php if($stmt->rowCount() > 0):?>
+                        <div class="form-group">
+                            <h3 style="text-align: center">Record has been updated!</h3>
+                        </div>
+                        <div class="form-group">
+                            <a class="btn btn-success" href="../dashboard.php">Go Back</a>
+                        </div>
+                    <?php endif;?>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php include_once("footer.php");?>
