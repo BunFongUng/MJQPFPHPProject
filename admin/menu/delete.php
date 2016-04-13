@@ -74,6 +74,10 @@ try {
                                 </div>
 
                                 <div class="form-group">
+                                    <textarea name="content" id="content"></textarea>
+                                </div>
+
+                                <div class="form-group">
                                     <input type="submit" class="form-control btn btn-danger" name="delete" value="Delete">
                                 </div>
                             </form>
