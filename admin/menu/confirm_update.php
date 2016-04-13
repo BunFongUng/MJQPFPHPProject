@@ -12,7 +12,8 @@ try {
     //if the user click the update button
     if(isset($_POST['update'])) {
         $update_id = (isset($_POST['update_id'])) ? $_POST['update_id'] : '';
-        echo $update_id;
+        $title = (isset($_POST['title']) && !empty($_POST['title'])) ? $_POST['title'] : '';
+        $parent = (isset($_POST['parent']) && !empty($_POST['parent'])) ? $_POST['parent'] : '';
     }
 
 } catch(PDOException $err) {
