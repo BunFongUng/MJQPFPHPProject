@@ -12,18 +12,19 @@ try {
         $menus[$parentMenu][$menu_id] = $menuTitle;
     }
 
-    function listing_menus($main_menus) {
-        global $menus;
-        echo "<ul>";
-            foreach($main_menus as $menu_id => $title) {
-                echo "<li><a href='#'>{$title}</a>";
-                    if(isset($menus[$menu_id])) {
-                        listing_menus($menus[$menu_id]);
-                    }
-                echo "</li>";
-            }
-        echo "</ul>";
-    }
+    print_r($menus);
+//    function listing_menus($main_menus) {
+//        global $menus;
+//        echo "<ul>";
+//            foreach($main_menus as $menu_id => $title) {
+//                echo "<li><a href='#'>{$title}</a>";
+//                    if(isset($menus[$menu_id])) {
+//                        listing_menus($menus[$menu_id]);
+//                    }
+//                echo "</li>";
+//            }
+//        echo "</ul>";
+//    }
 } catch(PDOException $err) {
     $error = $err->getMessage();
 }
@@ -110,7 +111,7 @@ try {
 
                     <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
 
-                   <?php listing_menus($menus[0])?>
+
 
                     <!-- Top Search
                     ============================================= -->
