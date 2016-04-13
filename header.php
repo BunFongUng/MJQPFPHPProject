@@ -1,3 +1,33 @@
+<?php
+try {
+    require_once("admin/config/Database.php");
+    $database = new Database();
+    $conn = $database->getConnection();
+    $sql_select = "SELECT * FROM menus";
+    $stmt = $conn->prepare($sql_select);
+    $stmt->execute();
+    $menus = array();
+
+    while(list($menu_id, $parentMenu, $menuTitle) = $stmt->fetch()) {
+        $menus[$parentMenu][$menu_id] = $menuTitle;
+    }
+
+    function listing_menus($main_menus) {
+        global $menus;
+        echo "<ul>";
+            foreach($main_menus as $menu_id => $title) {
+                echo "<li><a href='#'>{$title}</a>";
+                    if(isset($menus[$menu_id])) {
+                        listing_menus($menus[$menu_id]);
+                    }
+                echo "</li>";
+            }
+        echo "</ul>";
+    }
+} catch(PDOException $err) {
+    $error = $err->getMessage();
+}
+?>
 <!DOCTYPE html>
 <html dir="ltr" lang="en-US">
 <head>
@@ -80,77 +110,7 @@
 
                     <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
 
-                    <ul>
-                        <li><a href="index.html"><div>About Us</div></a>
-                            <ul>
-                                <li>
-                                    <a href="index-corporate.html"><div>History</div></a>
-                                </li>
-                                <li>
-                                    <a href="index-portfolio.html"><div>Vision, Mission & Core value</div></a>
-                                </li>
-                                <li>
-                                    <a href="index-blog.html"><div>Shareholders</div></a>
-                                </li>
-                                <li>
-                                    <a href="index-shop.html"><div>Board of Directors</div></a>
-                                </li>
-
-                                <li><a href="index-wedding.html"><div>Senior leadership</div></a></li>
-                                <li><a href="index-restaurant.html"><div>Organizational Governance</div></a></li>
-                                <li><a href="index-events.html"><div>Stakeholders</div></a></li>
-                            </ul>
-                        </li>
-
-                        <li><a href="index.html"><div>Products & Services</div></a></li>
-
-                        <li>
-                            <a href="index.html"><div>Reports</div></a>
-                            <ul>
-                                <li><a href="#">Performance Highlights</a></li>
-                                <li><a href="#">Social Highlights</a></li>
-                                <li><a href="#">Annual Reports</a></li>
-                                <li><a href="#">External Audit Reports</a></li>
-                                <li><a href="#">Financial Rating Reports</a></li>
-                            </ul>
-                        </li>
-
-                        <li>
-                            <a href="index.html"><div>Clients</div></a>
-                            <ul>
-                                <li><a href="#">Photos & Case Study</a></li>
-                            </ul>
-                        </li>
-
-                        <li>
-                            <a href="index.html"><div>Media</div></a>
-                            <ul>
-                                <li><a href="#">News & Events</a></li>
-                                <li><a href="#">Videos</a></li>
-                                <li><a href="#">Photo Gallery</a></li>
-                                <li><a href="#">Accolades</a></li>
-                                <li><a href="#">Logo</a></li>
-                                <li><a href="#">Public Holiday</a></li>
-                            </ul>
-                        </li>
-
-                        <li>
-                            <a href="index.html"><div>Careers</div></a>
-                            <ul>
-                                <li><a href="#">Job Vacancies</a></li>
-                                <li><a href="#">Internship</a></li>
-                                <li><a href="#">How to Apply</a></li>
-                            </ul>
-                        </li>
-
-                        <li>
-                            <a href="index.html"><div>Contact Us</div></a>
-                            <ul>
-                                <li><a href="#">Contact Head Office</a></li>
-                                <li><a href="#">Contact Branch</a></li>
-                            </ul>
-                        </li>
-                    </ul>
+                   <?php listing_menus($menus[0])?>
 
                     <!-- Top Search
                     ============================================= -->

@@ -29,7 +29,6 @@ try {
             $stmt->bindParam(":parent", $parent);
             $stmt->bindParam(":update_id", $update_id);
             $stmt->execute();
-
         }
     }
 
