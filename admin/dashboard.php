@@ -21,7 +21,7 @@
 <?php include_once('header.php');?>
 <div id="main-content">
     <div class="wrapper">
-        <div class="row">
+        <div class="row" id="displayAJAX">
             <div class="col-md-12">
                 <table class="table table-bordered">
                     <thead>
@@ -40,7 +40,7 @@
                                 <td><?= $row['MenuTitle']?></td>
                                 <td><?= $row['ParentMenu']?></td>
                                 <td>
-                                    <a class="btn btn-success" href="menu/update.php?id=<?= $row['ID']?>">Update</a>
+                                    <a id="btnUpdate" class="btn btn-success" href="menu/update.php?id=<?= $row['ID']?>">Update</a>
                                     <a href="menu/delete.php?id=<?= $row['ID']?>" class="btn btn-success">Delete</a>
                                 </td>
                             </tr>

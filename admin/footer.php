@@ -52,7 +52,12 @@
         $('select.styled').customSelect();
     });
 
+    var btnUpdate = document.querySelector("btnUpdate");
+    btnUpdate.addEventListener("click", function(e) {
+        e.preventDefault();
+        console.log("Hello, World!");
+    })
 </script>
 
-</body>
+    </body>
 </html>
