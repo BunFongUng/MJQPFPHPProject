@@ -18,6 +18,7 @@ try {
         $error_message = array();
         $title = (isset($_POST['title']) && !empty($_POST['title'])) ? $_POST['title'] : '';
         $parent = (isset($_POST['parent'])) ? $_POST['parent'] : '';
+        $content = (isset($_POST['content']) && !empty($_POST['content'])) ? $_POST['content'] : '';
 
         if($title == "") {
             $error_message['title_required'] = "Title Filed Is Required!";
@@ -27,11 +28,16 @@ try {
             $error_message['parent_required'] = "Parent Menu Field Is Required!";
         }
 
+        if($content == "") {
+            $error_message['content_required'] = "Content Field is Required!";
+        }
+
         if(empty($error_message)) {
-            $sql_insert = "INSERT INTO menus(MenuTitle, ParentMenu) VALUES(:title, :parent)";
+            $sql_insert = "INSERT INTO menus(MenuTitle, ParentMenu, Content) VALUES(:title, :parent, :content)";
             $stmt = $conn->prepare($sql_insert);
             $stmt->bindParam(":title", $title);
             $stmt->bindParam(":parent", $parent);
+            $stmt->bindParam(":content", $content);
             $stmt->execute();
             if($stmt->rowCount()) {
                 header("Location: ../index.php");
@@ -87,6 +93,13 @@ try {
                                     <?php endwhile;?>
                                 <?php endif;?>
                               </select>
+                          </div>
+
+                          <div class="form-group <?php echo $required = (isset($error_message['content_required'])) ? $required = 'has-error' : ''?>">
+                              <textarea name="content" id="content" class="form-control"></textarea>
+                              <?php if(isset($error_message['content_required'])):?>
+                                  <span class="help-block"><?= $error_message['content_required']?></span>
+                              <?php endif;?>
                           </div>
 
                           <div class="form-group">
