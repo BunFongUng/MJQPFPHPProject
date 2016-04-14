@@ -75,7 +75,7 @@ try {
                                 </div>
 
                                 <div class="form-group">
-                                    <textarea class="form-control" name="content" id="content" value="<?php echo $content = (isset($row['Content'])) ? $row['Content'] : ''?>"></textarea>
+                                    <textarea class="form-control" name="content" id="content"><?php echo $content = (isset($row['Content'])) ? $row['Content'] : ''?></textarea>
                                 </div>
 
                                 <div class="form-group">
