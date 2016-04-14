@@ -15,19 +15,25 @@ try {
         $update_id = (isset($_POST['update_id'])) ? $_POST['update_id'] : '';
         $title = (isset($_POST['title']) && !empty($_POST['title'])) ? $_POST['title'] : '';
         $parent = (isset($_POST['parent'])) ? $_POST['parent'] : '';
+        $content = (isset($_POST['content']) && !empty($_POST['content'])) ? $_POST['content'] : '';
 
         if($title == "") {
-            $error_message["title_required"] = "Title Field Is Required!";
+            $error_message["title_required"] = "Title Field is Required!";
+        }
+
+        if($content == "") {
+            $error_message["content_required"] = "Content Field is Required!";
         }
 
         if(empty($error_message)) {
             $database = new Database();
             $conn = $database->getConnection();
-            $sql_update = "UPDATE menus SET MenuTItle = :title, ParentMenu = :parent WHERE ID = :update_id";
+            $sql_update = "UPDATE menus SET MenuTItle = :title, ParentMenu = :parent, Content = :content WHERE ID = :update_id";
             $stmt = $conn->prepare($sql_update);
             $stmt->bindParam(":title", $title);
             $stmt->bindParam(":parent", $parent);
             $stmt->bindParam(":update_id", $update_id);
+            $stmt->bindParam(":content", $content);
             $stmt->execute();
         }
     }
