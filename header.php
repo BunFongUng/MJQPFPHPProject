@@ -15,7 +15,7 @@ try {
         global $menus;
         echo "<ul>";
             foreach($main_menus as $menu_id => $title) {
-                echo "<li><a href='index.php?menuID = '. {$menu_id}>{$title}</a>";
+                echo "<li><a href='index.php?menuID=".$menu_id."'>{$title}</a>";
                     if(isset($menus[$menu_id])) {
                         listing_menus($menus[$menu_id]);
                     }
