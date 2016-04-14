@@ -35,7 +35,7 @@
     }
 
 ?>
-<?php include_once("header.php");?>
+<?php include_once("../include_header.php");?>
     <div id="main-content">
         <div class="wrapper">
             <div class="row">
@@ -110,4 +110,4 @@
             </div>
         </div>
     </div>
-<?php include_once("footer.php");?>
+<?php include_once("../include_footer.php");?>

@@ -69,7 +69,7 @@
                     <ul class="dropdown-menu extended logout">
                         <div class="log-arrow-up"></div>
                         <li>
-                            <a href="../logout.php"><i class="icon_key_alt"></i> Log Out</a>
+                            <a href="logout.php"><i class="icon_key_alt"></i> Log Out</a>
                         </li>
                     </ul>
                 </li>
