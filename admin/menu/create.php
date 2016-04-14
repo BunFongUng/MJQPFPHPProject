@@ -1,50 +1,64 @@
-<?php include_once("../include_header.php");?>
 <?php
-$database = new Database();
-$conn = $database->getConnection();
+try {
+    session_start();
+    require_once("../config/User.php");
+    require_once("../config/Database.php");
 
-if(isset($_POST['submit'])) {
-    $error_message = array();
-    $title = (isset($_POST['title']) && !empty($_POST['title'])) ? $_POST['title'] : '';
-    $parent = (isset($_POST['parent'])) ? $_POST['parent'] : '';
-    $content = (isset($_POST['content']) && !empty($_POST['content'])) ? $_POST['content'] : '';
+    $user_home = new User();
+    $stmt = $user_home->runQuery("SELECT * FROM users WHERE id = :id");
+    $stmt->bindParam(":id", $_SESSION['userSession']);
+    $stmt->execute();
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+    $stmt->closeCursor();
 
-    if($title == "") {
-        $error_message['title_required'] = "Title Filed Is Required!";
-    }
+    $database = new Database();
+    $conn = $database->getConnection();
 
-    if($parent == "") {
-        $error_message['parent_required'] = "Parent Menu Field Is Required!";
-    }
+    if(isset($_POST['submit'])) {
+        $error_message = array();
+        $title = (isset($_POST['title']) && !empty($_POST['title'])) ? $_POST['title'] : '';
+        $parent = (isset($_POST['parent'])) ? $_POST['parent'] : '';
+        $content = (isset($_POST['content']) && !empty($_POST['content'])) ? $_POST['content'] : '';
 
-    if($content == "") {
-        $error_message['content_required'] = "Content Field is Required!";
-    }
-
-    if(empty($error_message)) {
-        $sql_insert = "INSERT INTO menus(MenuTitle, ParentMenu, Content) VALUES(:title, :parent, :content)";
-        $stmt = $conn->prepare($sql_insert);
-        $stmt->bindParam(":title", $title);
-        $stmt->bindParam(":parent", $parent);
-        $stmt->bindParam(":content", $content);
-        $stmt->execute();
-        if($stmt->rowCount()) {
-            header("Location: ../index.php");
-        } else {
-            print_r($stmt->errorInfo());
+        if($title == "") {
+            $error_message['title_required'] = "Title Filed Is Required!";
         }
+
+        if($parent == "") {
+            $error_message['parent_required'] = "Parent Menu Field Is Required!";
+        }
+
+        if($content == "") {
+            $error_message['content_required'] = "Content Field is Required!";
+        }
+
+        if(empty($error_message)) {
+            $sql_insert = "INSERT INTO menus(MenuTitle, ParentMenu, Content) VALUES(:title, :parent, :content)";
+            $stmt = $conn->prepare($sql_insert);
+            $stmt->bindParam(":title", $title);
+            $stmt->bindParam(":parent", $parent);
+            $stmt->bindParam(":content", $content);
+            $stmt->execute();
+            if($stmt->rowCount()) {
+                header("Location: ../index.php");
+            } else {
+                print_r($stmt->errorInfo());
+            }
+        }
+
+    } else {
+        $error_message = array();
     }
 
-} else {
-    $error_message = array();
-}
-
-//if user is not login
-if(!$user_home->is_logged_in()) {
-    $user_home->redirect("index.php");
+    //if user is not login
+    if(!$user_home->is_logged_in()) {
+        $user_home->redirect("index.php");
+    }
+} catch(PDOException $err) {
+    $error = $err->getMessage();
 }
 ?>
-
+<?php include_once("../include_header.php");?>
 <div id="main-content">
     <div class="wrapper">
         <div class="row">

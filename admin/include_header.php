@@ -1,17 +1,3 @@
-<?php
-//session_start();
-//require_once("../config/User.php");
-//require_once("../config/Database.php");
-//
-//$user_home = new User();
-//$stmt = $user_home->runQuery("SELECT * FROM users WHERE id = :id");
-//$stmt->bindParam(":id", $_SESSION['userSession']);
-//$stmt->execute();
-//$row = $stmt->fetch(PDO::FETCH_ASSOC);
-//$stmt->closeCursor();
-
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

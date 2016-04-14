@@ -1,25 +1,42 @@
-<?php include_once("../include_header.php");?>
 <?php
-$database = new Database();
+try {
+    session_start();
+    require_once("../config/User.php");
+    require_once("../config/Database.php");
 
-if(!$user_home->is_logged_in()) {
-    $user_home->redirect("index.php");
-}
-
-$error_message = array();
-$id = (isset($_GET['id'])) ? $_GET['id'] : '';
-if($id == "") {
-    $error_message["id_required"] = "ID not found!";
-} else {
-    $conn = $database->getConnection();
-    $sql_select = "SELECT * FROM menus WHERE ID = :id";
-    $stmt = $conn->prepare($sql_select);
-    $stmt->bindParam(":id", $id);
+    $user_home = new User();
+    $stmt = $user_home->runQuery("SELECT * FROM users WHERE id = :id");
+    $stmt->bindParam(":id", $_SESSION['userSession']);
     $stmt->execute();
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
     $stmt->closeCursor();
+
+    $database = new Database();
+
+    if(!$user_home->is_logged_in()) {
+        $user_home->redirect("index.php");
+    }
+
+    $error_message = array();
+    $id = (isset($_GET['id'])) ? $_GET['id'] : '';
+    if($id == "") {
+        $error_message["id_required"] = "ID not found!";
+    } else {
+        $conn = $database->getConnection();
+        $sql_select = "SELECT * FROM menus WHERE ID = :id";
+        $stmt = $conn->prepare($sql_select);
+        $stmt->bindParam(":id", $id);
+        $stmt->execute();
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        $stmt->closeCursor();
+    }
+
+} catch (PDOException $err) {
+    $error = $err->getMessage();
 }
 ?>
+
+<?php include_once("../include_header.php");?>
     <div id="main-content">
         <div class="wrapper">
             <div class="row">
