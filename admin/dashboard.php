@@ -29,6 +29,7 @@
                         <th>ID</th>
                         <th>Menu Title</th>
                         <th>Parent Menu</th>
+                        <th>Content</th>
                         <th>Action</th>
                     </tr>
                     </thead>
@@ -39,6 +40,7 @@
                                 <td><?= $row['ID']?></td>
                                 <td><?= $row['MenuTitle']?></td>
                                 <td><?= $row['ParentMenu']?></td>
+                                <td><?= $row['Content']?></td>
                                 <td>
                                     <a id="btnUpdate" class="btn btn-success" href="menu/update.php?id=<?= $row['ID']?>">Update</a>
                                     <a href="menu/delete.php?id=<?= $row['ID']?>" class="btn btn-success">Delete</a>
